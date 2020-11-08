@@ -24,7 +24,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../jenkins/getting-started" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -50,7 +50,8 @@
       <option name="presentableId" value="Default" />
       <updated>1604813031049</updated>
       <workItem from="1604813038035" duration="3206000" />
-      <workItem from="1604820827856" duration="2894000" />
+      <workItem from="1604820827856" duration="9597000" />
+      <workItem from="1604861686610" duration="648000" />
     </task>
     <servers />
   </component>
@@ -63,9 +64,17 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1604838724217">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1604838724217" />
     <state x="482" y="187" width="1024" height="845" key="SettingsEditor" timestamp="1604814253094">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="187" width="1024" height="845" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1604814253094" />
+    <state x="657" y="253" width="672" height="677" key="run.anything.popup" timestamp="1604834029843">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="657" y="253" width="672" height="677" key="run.anything.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1604834029843" />
   </component>
 </project>

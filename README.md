@@ -10,6 +10,14 @@
 #-----------------
 ### for generate a image:
 #### sudo docker build --tag webflux-example:0.0.1 .
+#-----------------
+
+#*****************
+## see applications that have automation and their files Jenkinsfile, Dockerfile and more ...
+#### git clone https://github.com/jhowilbur/webflux-from-jenkins.git
+#### git clone https://github.com/jhowilbur/quarkus-from-jenkins.git
+#### git clone https://github.com/jhowilbur/setup-jenkins.git
+#*****************
 
 ##### ~ 🅦🅘🅛🅑🅤🅡 ~
 

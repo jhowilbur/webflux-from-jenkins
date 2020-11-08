@@ -1,29 +1,47 @@
-#!groovy
-
 pipeline {
-    environment {
-        JAVA_TOOL_OPTIONS = "-Duser.home=/var/maven"
-    }
-    agent {
-        docker {
-            image "maven:3.6.0-jdk-13"
-            label "docker"
-            args "-v /tmp/maven:/var/maven/.m2 -e MAVEN_CONFIG=/var/maven/.m2"
-        }
+    agent any
+
+    tools {
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven "M3"
     }
 
     stages {
-        stage("Build") {
+        stage('Build') {
             steps {
-                sh "mvn -version"
-                sh "mvn clean install"
+                // Get some code from a GitHub repository
+                git 'https://github.com/jglick/simple-maven-project-with-tests.git'
+
+                // Run Maven on a Unix agent.
+                sh "mvn -Dmaven.test.failure.ignore=true clean package"
+
+                // To run Maven on a Windows agent, use
+                // bat "mvn -Dmaven.test.failure.ignore=true clean package"
+            }
+
+            post {
+                // If Maven was able to run the tests, even if some of the test
+                // failed, record the test results and archive the jar file.
+                success {
+                    junit '**/target/surefire-reports/TEST-*.xml'
+                    archiveArtifacts 'target/*.jar'
+                }
             }
         }
-    }
+        stage('Agora vai') {
+            steps {
+                sh "mvn -N help:effective-pom -Doutput=target/pom-effective.xml"
 
-    post {
-        always {
-            cleanWs()
+                script {
+                    pom = readMavenPom(file: 'target/pom-effective.xml')
+                    projectArtifactId = pom.getArtifactId()
+                    projectGroupId = pom.getGroupId()
+                    projectVersion = pom.getVersion()
+                    projectName = pom.getName()
+                }
+
+                echo "Building ${projectArtifactId}:${projectVersion}"
+            }
         }
     }
 }
