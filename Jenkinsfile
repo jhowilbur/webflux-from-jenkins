@@ -7,7 +7,7 @@ pipeline {
                 git 'https://github.com/jhowilbur/webflux-from-jenkins.git'
 
                 // Run Maven on a Unix agent.
-                sh "mvn -Dmaven.test.failure.ignore=true clean package"
+                sh "mvn clean package"
 
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
@@ -24,7 +24,14 @@ pipeline {
         }
 
         stage('Congratulations') {
-            echo '******** Jenkins basic tests works wonderful ********'
+            steps {
+                echo '******** Jenkins basic tests works wonderful ********'
+            }
+            post {
+                success {
+                echo '******** good job ********'
+                }
+            }
         }
     }
 }
