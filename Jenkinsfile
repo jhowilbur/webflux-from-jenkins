@@ -9,9 +9,14 @@ pipeline {
                echo 'This is a minimal pipeline.'
             }
         }
-        stage("clone code"){
+//         stage("clone code"){
+//             steps{
+//                git credentialsId: 'git_credentials', url: 'https://github.com/jhowilbur/webflux-from-jenkins.git'
+//             }
+//         }
+        stage("build code"){
             steps{
-               git credentialsId: 'git_credentials', url: 'https://github.com/jhowilbur/webflux-from-jenkins.git'
+              sh "apt install maven"
             }
         }
         stage("build code"){
