@@ -5,7 +5,7 @@
 #-----------------
 ### for running local:
 #### mvn clean package
-### and before
+### and after
 #### java -jar *.jar
 #-----------------
 ### for generate a image:
